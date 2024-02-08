@@ -18,10 +18,11 @@ const Sidebar = () => {
     { name: "Log Out", link: "/", icon: RiSettings4Line },
   ];
   const [open, setOpen] = useState(true);
+
   return (
-    <div className="flex gap-6 ">
+    <div className="flex gap-6">
       <div
-        className={`bg-slate-300 min-h-screen border-r-2 border-slate-400 ${open ? "w-60" : "w-16"} duration-300 text-gray-800 px-3 `}
+        className={`bg-slate-300 min-h-screen border-r-2 border-slate-400 ${open ? "w-44" : "w-16"} duration-300 text-gray-800 px-3 `}
       >
         <div className="py-3 flex justify-start">
           <HiMenuAlt3 size={26} className="cursor-pointer" onClick={() => setOpen(!open)} />
@@ -36,13 +37,11 @@ const Sidebar = () => {
               } group flex items-center text-sm gap-3.5 font-medium p-2 hover:bg-gray-50 rounded-md`}
             >
               <div>{React.createElement(menu?.icon, { size: "20" })}</div>
-              <h2 className={`whitespace-pre duration-500 ${!open && "opacity-0 translate-x-28 overflow-hidden"}`}>
-                {menu.name}
-              </h2>
+              <h2 className={`whitespace-pre transition-opacity duration-100  ${!open && "opacity-0"}`}>{menu.name}</h2>
               <h2
                 className={`${
                   open && "hidden"
-                } absolute left-48 font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden    `}
+                } absolute left-48 font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden`}
               >
                 {menu.name}
               </h2>
