@@ -19,8 +19,10 @@ const Sidebar = () => {
   ];
   const [open, setOpen] = useState(true);
   return (
-    <div className="flex gap-6">
-      <div className={`bg-slate-300 min-h-screen ${open ? "w-60" : "w-16"} duration-300 text-gray-800 px-3`}>
+    <div className="flex gap-6 ">
+      <div
+        className={`bg-slate-300 min-h-screen border-r-2 border-slate-400 ${open ? "w-60" : "w-16"} duration-300 text-gray-800 px-3 `}
+      >
         <div className="py-3 flex justify-start">
           <HiMenuAlt3 size={26} className="cursor-pointer" onClick={() => setOpen(!open)} />
         </div>

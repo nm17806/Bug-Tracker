@@ -32,8 +32,8 @@ export default function Navbar() {
   };
 
   return (
-    <div className="min-h-14 bg-slate-300 border-solid border-black-900 flex items-center gap-6">
-      <div className="flex-1 text-sm font-medium text-gray-900 rounded-md drop-shadow-lg">
+    <div className="h-screen-6 bg-slate-300 border-b-2 border-slate-400 flex items-center gap-6">
+      <div className="flex-1 text-sm font-medium text-gray-900 rounded-md drop-shadow-lg ml-3">
         Logged in as: <span className="text-lg font-normal"> {user} </span>
       </div>
       <div className="relative flex justify-end mx-3">
