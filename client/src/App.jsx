@@ -6,12 +6,15 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Navbar from "./components/Shared/Navbar";
+import CreateTicket from "./pages/createTicket";
+import Tickets from "./pages/Tickets";
+import Projects from "./pages/Projects";
 
 const Layout = () => {
   return (
     <div className="flex">
       <Sidebar />
-      <div className="flex-1 min-h-screen">
+      <div className="flex-1 w-96 min-h-screen">
         <Navbar />
         <Outlet />
       </div>
@@ -27,6 +30,18 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Dashboard />,
+      },
+      {
+        path: "/create_a_ticket",
+        element: <CreateTicket />,
+      },
+      {
+        path: "/tickets",
+        element: <Tickets />,
+      },
+      {
+        path: "/projects",
+        element: <Projects />,
       },
     ],
   },

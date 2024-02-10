@@ -8,6 +8,7 @@ export default {
       height: {
         "screen-94": "94vh",
         "screen-6": "6vh",
+        "screen-91": "91vh",
       },
     },
   },

@@ -20,7 +20,7 @@ const useOutsideClickHandler = (ref, callback) => {
 export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
-  const user = "Nick";
+  const user = "Nick"; // This needs to change to a dynamic value in the future
 
   useOutsideClickHandler(dropdownRef, () => {
     setIsDropdownOpen(false);

@@ -10,9 +10,9 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
   const menus = [
     { name: "Dashboard", link: "/", icon: MdOutlineDashboard },
-    { name: "Tickets", link: "/", icon: FiMessageSquare },
-    { name: "Create a Ticket", link: "/", icon: FiMessageSquare },
-    { name: "Analytics", link: "/", icon: TbReportAnalytics, margin: true },
+    { name: "Tickets", link: "/tickets", icon: FiMessageSquare },
+    { name: "Create a Ticket", link: "/create_a_ticket", icon: FiMessageSquare },
+    { name: "Projects", link: "/projects", icon: TbReportAnalytics, margin: true },
     { name: "Another Page", link: "/", icon: FiFolder },
     { name: "Users", link: "/", icon: AiOutlineUser, margin: true },
     { name: "Log Out", link: "/", icon: RiSettings4Line },
