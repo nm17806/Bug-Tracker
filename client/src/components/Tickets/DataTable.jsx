@@ -112,6 +112,7 @@ export default function DataTable() {
   ];
 
   let [data, setData] = useState({ nodes });
+  const [isHide, setHide] = useState(false);
 
   const mantineTheme = getTheme(DEFAULT_OPTIONS);
 
@@ -159,6 +160,10 @@ export default function DataTable() {
         (field) => field && typeof field === "string" && field.toLowerCase().includes(search.toLowerCase())
       )
     ),
+  };
+
+  data = {
+    nodes: isHide ? data.nodes.filter((node) => node.status !== "Resolved") : data.nodes,
   };
 
   const sort = useSort(
@@ -236,17 +241,31 @@ export default function DataTable() {
   return (
     <>
       <div className="text-xs">
-        <div className="w-full bg-slate-300/75">
-          <label htmlFor="search">
-            <input
-              id="search"
-              className="mx-3 my-2  rounded"
-              type="text"
-              value={search}
-              onChange={handleSearch}
-              placeholder="Search All Fields"
-            />
-          </label>
+        <div className="flex w-full bg-slate-300/75">
+          <div className="">
+            <label htmlFor="search">
+              <input
+                id="search"
+                className="mx-3 my-2 rounded "
+                type="text"
+                value={search}
+                onChange={handleSearch}
+                placeholder="Search All Fields"
+              />
+            </label>
+          </div>
+          <div className="py-5">
+            <label htmlFor="complete">
+              Hide Resolved:
+              <input
+                className="ml-1"
+                id="complete"
+                type="checkbox"
+                checked={isHide}
+                onChange={() => setHide(!isHide)}
+              />
+            </label>
+          </div>
         </div>
         <CompactTable
           key={data.nodes.id}
