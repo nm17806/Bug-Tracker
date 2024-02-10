@@ -214,13 +214,7 @@ export default function DataTable() {
       renderCell: (item) => (
         <select
           type="text"
-          style={{
-            width: "100%",
-            border: "none",
-            fontSize: "1rem",
-            padding: 0,
-            margin: 0,
-          }}
+          className="w-full ps-1 p-0 border m-0 font-md rounded"
           value={item.status}
           onChange={(event) => handleUpdate(event.target.value, item.id, "status")}
         >
