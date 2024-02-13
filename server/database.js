@@ -1,18 +1,12 @@
 const mysql = require('mysql2');
+require('dotenv').config(); // Load environment variables from .env file
 
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '#FuturoCEO2020',
+    password: process.env.DATABASE_PASSWORD, // Use the DATABASE_PASSWORD from .env
     database: 'bug_tracker'
 });
 
-db.connect((err) => {
-    if (err) {
-        console.error('Error connecting to the database:', err);
-        return;
-    }
-    console.log('Connected to the database!');
-});
+// Rest of the code...
 
-module.exports = db;
