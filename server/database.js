@@ -8,5 +8,12 @@ const db = mysql.createConnection({
     database: 'bug_tracker'
 });
 
-// Rest of the code...
+db.connect((err) => {
+    if (err) {
+        console.error('Error connecting to database:', err);
+        return;
+    }
+    console.log('Connected to database');
+});
 
+module.exports = db;
